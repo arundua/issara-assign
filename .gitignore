@@ -1,0 +1,28 @@
+# .gitignore
+# Python
+*.pyc
+__pycache__/
+db.sqlite3
+
+# Django
+*.log
+*.pot
+*.pyc
+__pycache__/
+media/
+staticfiles/
+
+# Node
+node_modules/
+npm-debug.log
+build/
+
+# Docker
+*.env
+.DS_Store
+
+# Pycharm
+.idea/
+
+# Virtual Environment
+venv/

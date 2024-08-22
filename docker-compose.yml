@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: C:\Users\arund\PycharmProjects\issara-django\issaraAssign  # Path to the backend code directory containing the Dockerfile
+    container_name: django_backend
+    volumes:
+      - ./carDealerBackend:/app
+      - ./db.sqlite3:/app/db.sqlite3  # SQLite database file path
+    ports:
+      - "8000:8000"  #  Django's development server  port
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONUNBUFFERED=1
+    command: python /app/manage.py runserver 0.0.0.0:8000  # start the Django server
+
+  frontend:
+    build:
+      context: ./car-dealer-frontend  #   React frontend path
+      dockerfile: Dockerfile
+    container_name: react_frontend
+    ports:
+      - "3000:3000" #  React frontend  port
+    stdin_open: true
+    tty: true
