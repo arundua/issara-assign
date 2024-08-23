@@ -12,7 +12,7 @@ class Command(BaseCommand):
                   'Phoenix', 'Chennai', 'Pattaya', 'Surat Thani',
                   'Mumbai', 'Krabi']
 
-        for _ in range(100):  # Adjust the range for the number of dummy records you want
+        for _ in range(100):  
             CarDealer.objects.create(
                 name=faker.company(),
                 name_en=faker.company(),
